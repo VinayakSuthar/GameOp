@@ -33,7 +33,7 @@ body {
 }
 
 .app {
-  @apply flex z-10 relative text-slate-50 items-center flex-col min-h-screen max-w-7xl mx-auto sm:px-16 px-6;
+  @apply flex z-10 relative text-slate-50 items-center flex-col min-h-screen max-w-7xl mx-auto sm:px-12 lg:px-16 px-6;
 }
 
 .logo {
@@ -51,7 +51,7 @@ body {
 }
 
 .main:before {
-  background: radial-gradient(circle, #09152b 0, #212250 100%);
+  background: linear-gradient(45deg, #09152b 0, #212250 100%);
   position: absolute;
   content: "";
   z-index: 2;
