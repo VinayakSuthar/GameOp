@@ -40,6 +40,10 @@ body {
   @apply text-xl font-medium bg-gradient-to-r from-[#05a1c3] to-blue-500 inline-block text-transparent bg-clip-text;
 }
 
+.hero-image {
+  @apply -z-10 mx-auto sm:mx-0 relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] xl:w-[500px] xl:h-[500px] flex-grow-0 flex-shrink-0 rounded-full overflow-hidden;
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -51,7 +55,7 @@ body {
 }
 
 .main:before {
-  background: linear-gradient(45deg, #09152b 0, #212250 100%);
+  background: linear-gradient(135deg, #050811 0, #212250 100%);
   position: absolute;
   content: "";
   z-index: 2;
