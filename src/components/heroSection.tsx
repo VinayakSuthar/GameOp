@@ -4,7 +4,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="relative sm:static sm:flex sm:flex-row-reverse items-center justify-around mt-5 sm:mt-10">
+    <div className="relative sm:static sm:flex sm:flex-row-reverse items-center justify-between mt-5 mb-10">
       <div className="hero-image">
         <Image
           src="/images/hero.jpg"
@@ -17,7 +17,7 @@ export default function HeroSection() {
         <h3 className="text-lg sm:text-xl lg:text-3xl mb-1 sm:mb-4 font-bold">
           New Launch
         </h3>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-7 font-extrabold text-sky-600">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-3 sm:mb-7 font-extrabold text-sky-500">
           Aquatic Rescue
         </h2>
         <p className="text-sm sm:text-base font-medium sm:mb-5 line-clamp-3 lg:line-clamp-none">
