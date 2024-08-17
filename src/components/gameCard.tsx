@@ -2,16 +2,21 @@ import { Game } from "@/types/games";
 import { Button } from "@mui/material";
 import React from "react";
 import ImageWithFallback from "./imageWithFallback";
+import { cn } from "@/utils";
 
 interface GameCardProps {
   game: Game;
+  className?: string;
 }
 
-export default function GameCard({ game }: GameCardProps) {
+export default function GameCard({ game, className }: GameCardProps) {
   return (
     <div
       key={game.code}
-      className="flex-shrink-0 flex-grow-0 relative overflow-hidden rounded-lg snap-center hover:scale-110 transition"
+      className={cn(
+        "relative overflow-hidden rounded-lg hover:scale-110 transition",
+        className
+      )}
     >
       <ImageWithFallback
         src={game.assets.cover}
