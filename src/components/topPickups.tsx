@@ -1,7 +1,8 @@
 import { Game } from "@/types/games";
 
 import React from "react";
-import TopGameCarousal from "./topGameCarousal";
+import Carousal from "./carousal";
+import GameCard from "./gameCard";
 
 const baseUrl = process.env.BASE_URL as string;
 
@@ -18,7 +19,11 @@ export default async function TopPickups() {
       <h2 className="font-bold text-2xl sm:text-3xl border-b-2 border-blue-600 inline-block sm:mb-10">
         Top Pickups Showcase
       </h2>
-      <TopGameCarousal games={elevenGames} />
+      <Carousal>
+        {elevenGames.map((game) => (
+          <GameCard key={game.code} game={game} />
+        ))}
+      </Carousal>
     </div>
   );
 }

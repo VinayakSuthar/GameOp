@@ -7,12 +7,17 @@ import {
 import { IconButton } from "@mui/material";
 import { useEffect, useRef } from "react";
 import GameCard from "./gameCard";
+import { cn } from "@/utils";
 
 interface TopGamesCarousalProps {
-  games: Game[];
+  children: React.ReactNode;
+  className?: string;
 }
 
-export default function TopGameCarousal({ games }: TopGamesCarousalProps) {
+export default function Carousal({
+  children,
+  className,
+}: TopGamesCarousalProps) {
   const carousalRef = useRef<HTMLDivElement>(null);
 
   function scrollLeft() {
@@ -48,11 +53,12 @@ export default function TopGameCarousal({ games }: TopGamesCarousalProps) {
       </IconButton>
       <div
         ref={carousalRef}
-        className="flex overflow-x-auto gap-x-8 py-10 snap-x"
+        className={cn(
+          "flex overflow-x-auto gap-x-8 py-10 snap-x *:flex-shrink-0 *:flex-grow-0 *:snap-center",
+          className
+        )}
       >
-        {games.map((game) => (
-          <GameCard key={game.code} game={game} />
-        ))}
+        {children}
       </div>
       <IconButton
         className="text-blue-500 hidden sm:inline-flex"
