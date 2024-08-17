@@ -15,8 +15,8 @@ export default async function TopPickups() {
   const elevenGames = data.games.slice(0, 11);
 
   return (
-    <div>
-      <h2 className="font-bold text-2xl sm:text-3xl border-b-2 border-blue-600 inline-block sm:mb-10">
+    <div className="mb-5 sm:mb-10">
+      <h2 className="font-bold text-2xl sm:text-3xl border-b-2 border-blue-600 inline-block mb-5 sm:mb-10">
         Top Pickups Showcase
       </h2>
       <Carousal>
