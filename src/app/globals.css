@@ -33,7 +33,7 @@ body {
 }
 
 .app {
-  @apply flex z-10 relative text-slate-50 items-center flex-col min-h-screen max-w-7xl mx-auto px-6 sm:px-12 xl:px-10;
+  @apply flex z-10 relative text-slate-50 items-center flex-col min-h-screen max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 xl:px-10;
 }
 
 .logo {
