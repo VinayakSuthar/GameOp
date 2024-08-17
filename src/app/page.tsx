@@ -1,4 +1,3 @@
-import AllGames from "@/components/allGames";
 import HeroSection from "@/components/heroSection";
 import TopPickups from "@/components/topPickups";
 import UpcomingAdventures from "@/components/upcomingAdventures";
