@@ -14,17 +14,11 @@ export default function GameCard({ game, className }: GameCardProps) {
     <div
       key={game.code}
       className={cn(
-        "relative overflow-hidden rounded-lg hover:scale-110 transition",
+        "relative overflow-hidden rounded-lg hover:scale-110 transition aspect-[4/5]",
         className
       )}
     >
-      <ImageWithFallback
-        src={game.assets.cover}
-        width={180}
-        height={200}
-        alt={game.name.en}
-        className="h-[unset] aspect-[4/5]"
-      />
+      <ImageWithFallback src={game.assets.cover} fill alt={game.name.en} />
       <div className="absolute bottom-0 h-2/3 flex items-center justify-end py-3 gap-y-1 flex-col w-full bg-gradient-to-t from-black/85 via-black/60 to-black/0">
         <h3 className="font-medium">{game.name.en}</h3>
         <Button
