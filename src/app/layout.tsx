@@ -5,6 +5,8 @@ import Nav from "@/components/nav";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { StyledEngineProvider } from "@mui/material";
 import Footer from "@/components/footer";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +28,7 @@ export default function RootLayout({
             <div className="main" />
             <main className="app">
               <Nav />
-              {children}
+              <Suspense fallback={<Loading />}>{children}</Suspense>
             </main>
             <Footer />
           </StyledEngineProvider>
