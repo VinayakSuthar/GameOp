@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
@@ -27,12 +26,9 @@ export default function HeroSection() {
           bubbles! Tickle your brains as your find the best way to rescue these
           little water creatures from their bubbles!
         </p>
-        <Button
-          variant="contained"
-          className="mt-5 uppercase bg-gradient-to-r from-violet-700 to-blue-700 text-lg rounded-lg px-5"
-        >
+        <button className="mt-5 uppercase bg-gradient-to-r from-violet-700 to-blue-700 text-lg font-medium rounded-lg px-7 py-2">
           Pre-Order Now
-        </Button>
+        </button>
       </div>
     </div>
   );

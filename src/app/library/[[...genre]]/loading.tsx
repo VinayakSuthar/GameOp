@@ -1,4 +1,3 @@
-import { Skeleton } from "@mui/material";
 import React from "react";
 
 export default function Loading() {
@@ -8,12 +7,9 @@ export default function Loading() {
     <div className="w-full">
       <div className="all-games">
         {tenItems.map((_, index) => (
-          <Skeleton
+          <div
             key={index}
-            variant="rectangular"
-            className="rounded-md"
-            width={180}
-            height={200}
+            className="rounded-md aspect-[4/5] bg-white/10 animate-pulse"
           />
         ))}
       </div>

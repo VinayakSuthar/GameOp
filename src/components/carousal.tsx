@@ -1,12 +1,9 @@
 "use client";
-import { Game } from "@/types/games";
 import {
   KeyboardDoubleArrowLeftRounded,
   KeyboardDoubleArrowRightRounded,
 } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
 import { useEffect, useRef } from "react";
-import GameCard from "./gameCard";
 import { cn } from "@/utils";
 
 interface TopGamesCarousalProps {
@@ -44,13 +41,13 @@ export default function Carousal({
   }, []);
 
   return (
-    <div className="flex items-center gap-4">
-      <IconButton
-        className="text-blue-500 hidden sm:inline-flex"
+    <div className="flex items-center gap-3">
+      <button
+        className="text-blue-500 hidden sm:inline-flex p-1 hover:bg-white/5 rounded-full"
         onClick={scrollLeft}
       >
         <KeyboardDoubleArrowLeftRounded className="text-5xl" />
-      </IconButton>
+      </button>
       <div
         ref={carousalRef}
         className={cn(
@@ -60,12 +57,12 @@ export default function Carousal({
       >
         {children}
       </div>
-      <IconButton
-        className="text-blue-500 hidden sm:inline-flex"
+      <button
+        className="text-blue-500 hidden sm:inline-flex p-1 hover:bg-white/5 rounded-full"
         onClick={scrollRight}
       >
         <KeyboardDoubleArrowRightRounded className="text-5xl" />
-      </IconButton>
+      </button>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { fetchGames } from "@/api/games";
-import { Button } from "@mui/material";
 import Image from "next/image";
 
 function roundToDecimal(num: number) {
@@ -16,11 +15,11 @@ export default async function UpcomingAdventures() {
         Most Played Adventures
       </h2>
 
-      <div className="flex gap-x-7 pb-3 sm:pb-0 sm:gap-x-14 overflow-x-scroll sm:overflow-x-hidden">
+      <div className="flex gap-x-7 pb-3 sm:pb-0 sm:gap-x-14 overflow-x-scroll sm:overflow-x-hidden no-scrollbar">
         {threeGames.map((game) => (
           <div
             key={game.code}
-            className="basis-1/2 flex-grow-0 flex-shrink-0 sm:flex-1"
+            className="basis-1/2 flex-grow-0 flex-shrink-0 sm:flex-1 max-w-[380px]"
           >
             <div className="relative aspect-square mb-2 sm:mb-3 rounded-md overflow-hidden">
               <Image src={game.assets.square} fill alt={game.name.en} />
@@ -35,13 +34,12 @@ export default async function UpcomingAdventures() {
                   {roundToDecimal(game.gamePlays)}k Played
                 </p>
               </div>
-              <Button
-                variant="outlined"
+              <a
                 href={game.url}
-                className="border-blue-500 text-white capitalize rounded-md bg-white/10"
+                className="border-blue-500 text-white capitalize rounded-md bg-white/10 border text-sm py-1 sm:px-5 sm:py-2 text-center"
               >
                 Play Now
-              </Button>
+              </a>
             </div>
           </div>
         ))}
