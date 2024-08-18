@@ -6,7 +6,7 @@ interface Response {
   games: Game[];
 }
 
-async function fetchGames(genre: string) {
+async function fetchGames(genre?: string) {
   const data: Response = await fetch(baseUrl).then((res) => res.json());
   let result: Game[] = [];
 

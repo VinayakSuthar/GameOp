@@ -22,6 +22,7 @@ export default function Nav() {
           <Search className="text-white" />
         </IconButton>
       </div>
+      <Link href="/library">Library</Link>
       <Link href="/profile">Profile</Link>
     </nav>
   );
