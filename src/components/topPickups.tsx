@@ -3,16 +3,11 @@ import { Game } from "@/types/games";
 import React from "react";
 import Carousal from "./carousal";
 import GameCard from "./gameCard";
-
-const baseUrl = process.env.BASE_URL as string;
-
-interface Response {
-  games: Game[];
-}
+import { fetchGames } from "@/api/games";
 
 export default async function TopPickups() {
-  const data: Response = await fetch(baseUrl).then((res) => res.json());
-  const elevenGames = data.games.slice(0, 11);
+  const games = await fetchGames();
+  const elevenGames = games.slice(0, 11);
 
   return (
     <div className="mb-5 sm:mb-10">

@@ -1,6 +1,6 @@
 import { Game } from "@/types/games";
 
-const baseUrl = process.env.BASE_URL as string;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 interface Response {
   games: Game[];
