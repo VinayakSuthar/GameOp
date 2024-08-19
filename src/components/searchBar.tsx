@@ -12,6 +12,7 @@ import {
 } from "@mui/icons-material";
 import Image from "next/image";
 import React, { useState } from "react";
+import OutsideClick from "./outsideClick";
 
 interface SearchBarProps {
   className?: string;
@@ -57,30 +58,31 @@ export default function SearchBar({
 
   return (
     <div className={cn("relative", className)} onClick={onClick}>
-      <div className="relative">
-        <Search className="absolute text-xl top-1/2 left-[20px] -translate-y-1/2" />
-        <input
-          type="text"
-          value={searchString}
-          onChange={handleChange}
-          placeholder="Search"
-          autoFocus={autofocus}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          className="rounded-lg px-[60px] pr-5 py-3 bg-white/10 w-full"
-        />
-        <button
-          className="absolute right-[20px] top-1/2 -translate-y-1/2"
-          onClick={clearSearch}
-        >
-          <Clear />
-        </button>
-      </div>
-      {searchString.length > 0 && isFocused && (
-        <div className="absolute top-full mt-2 h-[400px] overflow-y-scroll w-full bg-black/70 backdrop-blur-md rounded-md z-20">
-          <SearchResult result={searchResults} isLoading={isLoading} />
+      <OutsideClick onOutsideClick={() => setIsFocused(false)}>
+        <div className="relative">
+          <Search className="absolute text-xl top-1/2 left-[20px] -translate-y-1/2" />
+          <input
+            type="text"
+            value={searchString}
+            onChange={handleChange}
+            placeholder="Search"
+            autoFocus={autofocus}
+            onFocus={() => setIsFocused(true)}
+            className="rounded-lg px-[60px] pr-5 py-3 bg-white/10 w-full"
+          />
+          <button
+            className="absolute right-[20px] top-1/2 -translate-y-1/2"
+            onClick={clearSearch}
+          >
+            <Clear />
+          </button>
         </div>
-      )}
+        {searchString.length > 0 && isFocused && (
+          <div className="absolute top-full mt-2 h-[400px] overflow-y-scroll w-full bg-black/70 backdrop-blur-md rounded-md z-20">
+            <SearchResult result={searchResults} isLoading={isLoading} />
+          </div>
+        )}
+      </OutsideClick>
     </div>
   );
 }
