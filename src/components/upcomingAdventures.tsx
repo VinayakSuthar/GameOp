@@ -25,7 +25,7 @@ export default async function UpcomingAdventures() {
               <Image src={game.assets.square} fill alt={game.name.en} />
             </div>
 
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between px-1 lg:px-3">
+            <div className="flex flex-col xl:flex-row xl:items-center justify-between px-1 lg:px-3">
               <div>
                 <h3 className="font-bold sm:text-lg md:text-xl sm:mb-1">
                   {game.name.en}

@@ -51,7 +51,7 @@ export default function Carousal({
       <div
         ref={carousalRef}
         className={cn(
-          "flex overflow-x-auto gap-x-8 py-5 snap-x flex-1 *:basis-[180px] *:flex-shrink-0 *:flex-grow-0 *:snap-center",
+          "flex overflow-x-auto gap-x-8 py-5 snap-x flex-1 *:basis-[180px] *:flex-shrink-0 *:flex-grow-0 *:snap-center no-scrollbar",
           className
         )}
       >
